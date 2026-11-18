@@ -17,12 +17,13 @@ body{margin:0;background:#ffffff;-webkit-font-smoothing:antialiased}
 html{scroll-behavior:smooth}
 img,video{max-width:100%}
 a{color:#1043b0}a:hover{color:#0b2f7d}
-@media (max-width: 760px) {
-  .map-line { display: none; }
+@media (max-width: 900px) {
+  .crew-line { display: none; }
+  .crew-map { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; row-gap: 26px !important; }
+  .crew-node > div:first-child { height: auto !important; }
+  .crew-node:last-child { grid-column: 1 / -1; }
   nav div a:not(.dl) { display: none; }
   nav { flex-wrap: nowrap !important; }
-  .map { justify-content: center !important; }
-  .map > div { margin-top: 0 !important; flex: 0 0 42%; }
 }
 </style>
 </head>
@@ -54,40 +55,36 @@ a{color:#1043b0}a:hover{color:#0b2f7d}
       <p style="margin: 14px 0 0; font-size: 13.5px; color: #5d5d68">Free · Windows 10 and 11 · No account</p>
     </div>
 
-    <div aria-label="The crew at work" style="position: relative; max-width: 1080px; margin: 56px auto 0; padding-bottom: 64px">
-      <div class="map-line" aria-hidden="true" style="position: absolute; left: 6%; right: 6%; top: 118px; height: 2px; background: linear-gradient(90deg, transparent, #9db3ef 20%, #9db3ef 80%, transparent)"></div>
-      <div class="map-line" aria-hidden="true" style="position: absolute; left: 50%; top: 118px; width: 2px; height: 120px; background: #9db3ef"></div>
-      <div class="map" style="position: relative; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 18px">
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 60px">
-          <span style="width: 76px; height: 76px; border-radius: 22px; background: #ffffff; box-shadow: 0 12px 28px rgba(27, 87, 216, 0.16), inset 0 -2px 0 rgba(15, 23, 42, 0.05); display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1b57d8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z"></path><path d="M19 11a7 7 0 0 1-14 0M12 18v3"></path></svg></span>
-          <span style="font-weight: 600; font-size: 14px">Listen</span>
+    <div aria-label="The crew at work" style="position: relative; max-width: 1120px; margin: 56px auto 0; padding-bottom: 64px">
+      <div class="crew-line" aria-hidden="true" style="position: absolute; top: 65px; left: calc(100% / 14); right: calc(100% / 14); height: 2px; border-radius: 2px; background: linear-gradient(90deg, #b9c8f3, #1b57d8 50%, #b9c8f3)"></div>
+      <div class="crew-map" style="position: relative; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px">
+        <div class="crew-node" style="display: flex; flex-direction: column; align-items: center; gap: 10px; min-width: 0">
+          <div style="height: 132px; display: flex; align-items: center; justify-content: center"><span style="width: 72px; height: 72px; border-radius: 22px; background: #ffffff; box-shadow: 0 10px 24px rgba(27, 87, 216, 0.14), 0 0 0 1px rgba(27, 87, 216, 0.08); display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1b57d8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z"></path><path d="M19 11a7 7 0 0 1-14 0M12 18v3"></path></svg></span></div>
+          <span style="font-weight: 600; font-size: 14.5px">Listen</span><span style="padding: 6px 12px; border-radius: 999px; background: #ffffff; border: 1px solid #dbe3fb; color: #1043b0; font-size: 12.5px; font-weight: 600; white-space: nowrap">Heard every word</span>
         </div>
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 18px">
-          <span style="width: 76px; height: 76px; border-radius: 22px; background: #ffffff; box-shadow: 0 12px 28px rgba(27, 87, 216, 0.16), inset 0 -2px 0 rgba(15, 23, 42, 0.05); display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1b57d8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></span>
-          <span style="font-weight: 600; font-size: 14px">Scout</span>
-          <span style="padding: 6px 12px; border-radius: 999px; background: #ffffff; border: 1px solid #f4c7c3; color: #b42318; font-size: 12.5px; font-weight: 600; white-space: nowrap">Skipped the subscribe ask</span>
+        <div class="crew-node" style="display: flex; flex-direction: column; align-items: center; gap: 10px; min-width: 0">
+          <div style="height: 132px; display: flex; align-items: center; justify-content: center"><span style="width: 72px; height: 72px; border-radius: 22px; background: #ffffff; box-shadow: 0 10px 24px rgba(27, 87, 216, 0.14), 0 0 0 1px rgba(27, 87, 216, 0.08); display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1b57d8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></span></div>
+          <span style="font-weight: 600; font-size: 14.5px">Scout</span><span style="padding: 6px 12px; border-radius: 999px; background: #ffffff; border: 1px solid #f4c7c3; color: #b42318; font-size: 12.5px; font-weight: 600; white-space: nowrap">Skipped the subscribe ask</span>
         </div>
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 12px">
-          <img src="assets/bruno.png" alt="Bruno" style="width: 118px; height: 118px; border-radius: 32px; box-shadow: 0 18px 40px rgba(20, 64, 160, 0.3)">
-          <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 20px">Bruno</span>
+        <div class="crew-node" style="display: flex; flex-direction: column; align-items: center; gap: 10px; min-width: 0">
+          <div style="height: 132px; display: flex; align-items: center; justify-content: center"><img src="assets/bruno.png" alt="Bruno" style="width: 104px; height: 104px; border-radius: 26px; box-shadow: 0 16px 36px rgba(20, 64, 160, 0.3), 0 0 0 4px #eef2fd"></div>
+          <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 19px">Bruno</span>
         </div>
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 14px; margin-top: 150px">
-          <img src="assets/bearstudio.png" alt="BearStudio" style="width: 132px; height: 132px; border-radius: 36px; box-shadow: 0 24px 50px rgba(20, 64, 160, 0.35)">
-          <span style="padding: 8px 14px; border-radius: 999px; background: #0e0e12; color: #ffffff; font-size: 13px; font-weight: 600">Runs on this PC</span>
+        <div class="crew-node" style="display: flex; flex-direction: column; align-items: center; gap: 10px; min-width: 0">
+          <div style="height: 132px; display: flex; align-items: center; justify-content: center"><img src="assets/bearstudio.png" alt="BearStudio" style="width: 128px; height: 128px; border-radius: 34px; box-shadow: 0 22px 48px rgba(20, 64, 160, 0.38), 0 0 0 6px #ffffff"></div>
+          <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 19px">BearStudio</span><span style="padding: 7px 13px; border-radius: 999px; background: #0e0e12; color: #ffffff; font-size: 12.5px; font-weight: 600; white-space: nowrap">Runs on this PC</span>
         </div>
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 12px">
-          <img src="assets/bella.png" alt="Bella" style="width: 118px; height: 118px; border-radius: 32px; box-shadow: 0 18px 40px rgba(20, 64, 160, 0.3)">
-          <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 20px">Bella</span>
+        <div class="crew-node" style="display: flex; flex-direction: column; align-items: center; gap: 10px; min-width: 0">
+          <div style="height: 132px; display: flex; align-items: center; justify-content: center"><img src="assets/bella.png" alt="Bella" style="width: 104px; height: 104px; border-radius: 26px; box-shadow: 0 16px 36px rgba(20, 64, 160, 0.3), 0 0 0 4px #eef2fd"></div>
+          <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 19px">Bella</span>
         </div>
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 18px">
-          <span style="width: 76px; height: 76px; border-radius: 22px; background: #ffffff; box-shadow: 0 12px 28px rgba(27, 87, 216, 0.16), inset 0 -2px 0 rgba(15, 23, 42, 0.05); display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1b57d8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"></path><circle cx="12" cy="12" r="9"></circle></svg></span>
-          <span style="font-weight: 600; font-size: 14px">Critic</span>
-          <span style="padding: 6px 12px; border-radius: 999px; background: #ffffff; border: 1px solid #f6d7a8; color: #92400e; font-size: 12.5px; font-weight: 600; white-space: nowrap">Story 14 ends early: extend</span>
+        <div class="crew-node" style="display: flex; flex-direction: column; align-items: center; gap: 10px; min-width: 0">
+          <div style="height: 132px; display: flex; align-items: center; justify-content: center"><span style="width: 72px; height: 72px; border-radius: 22px; background: #ffffff; box-shadow: 0 10px 24px rgba(27, 87, 216, 0.14), 0 0 0 1px rgba(27, 87, 216, 0.08); display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1b57d8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"></path><circle cx="12" cy="12" r="9"></circle></svg></span></div>
+          <span style="font-weight: 600; font-size: 14.5px">Critic</span><span style="padding: 6px 12px; border-radius: 999px; background: #ffffff; border: 1px solid #f6d7a8; color: #92400e; font-size: 12.5px; font-weight: 600; white-space: nowrap">Story 14 ends early: extend</span>
         </div>
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 60px">
-          <span style="width: 76px; height: 76px; border-radius: 22px; background: #ffffff; box-shadow: 0 12px 28px rgba(27, 87, 216, 0.16), inset 0 -2px 0 rgba(15, 23, 42, 0.05); display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1b57d8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m10 9 5 3-5 3z"></path></svg></span>
-          <span style="font-weight: 600; font-size: 14px">Render</span>
-          <span style="padding: 6px 12px; border-radius: 999px; background: #ffffff; border: 1px solid #b7e4c7; color: #15803d; font-size: 12.5px; font-weight: 600; white-space: nowrap">40 shorts ready</span>
+        <div class="crew-node" style="display: flex; flex-direction: column; align-items: center; gap: 10px; min-width: 0">
+          <div style="height: 132px; display: flex; align-items: center; justify-content: center"><span style="width: 72px; height: 72px; border-radius: 22px; background: #ffffff; box-shadow: 0 10px 24px rgba(27, 87, 216, 0.14), 0 0 0 1px rgba(27, 87, 216, 0.08); display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1b57d8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m10 9 5 3-5 3z"></path></svg></span></div>
+          <span style="font-weight: 600; font-size: 14.5px">Render</span><span style="padding: 6px 12px; border-radius: 999px; background: #ffffff; border: 1px solid #b7e4c7; color: #15803d; font-size: 12.5px; font-weight: 600; white-space: nowrap">40 shorts ready</span>
         </div>
       </div>
     </div>

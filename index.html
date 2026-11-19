@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Figtree:wght@400..800&amp;display=swap">
 <style>
-@media (max-width: 960px) { .crew-strip { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
+@media (max-width: 1100px) and (min-width: 761px) { .crew-map { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; row-gap: 28px !important; } }
 body{margin:0;background:#ffffff;-webkit-font-smoothing:antialiased}
 html{scroll-behavior:smooth}
 img,video{max-width:100%}
@@ -21,11 +21,12 @@ a{color:#1043b0}a:hover{color:#0b2f7d}
 @media (max-width: 760px) {
   nav div a:not(.dl) { display: none; }
   nav { flex-wrap: nowrap !important; }
-  .crew-tiles { grid-template-columns: 1fr !important; }
-  .crew-bear { width: 92px !important; height: 92px !important; }
-  .crew-tiles > div > div:nth-of-type(3) { max-width: calc(100% - 110px) !important; }
-  .crew-tiles > div { min-height: 190px !important; }
-  .crew-strip { grid-template-columns: 1fr !important; }
+  .crew-map { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; row-gap: 26px !important; }
+  .crew-node { grid-column: span 3; }
+  .crew-bear-node { grid-column: span 2; order: -1; }
+  .crew-bear-node img { width: 88px !important; height: 88px !important; border-radius: 24px !important; }
+  .crew-bear-node span { font-size: 16px !important; }
+  .crew-stage { height: 104px !important; }
 }
 </style>
 </head>
@@ -57,49 +58,35 @@ a{color:#1043b0}a:hover{color:#0b2f7d}
       <p style="margin: 14px 0 0; font-size: 13.5px; color: #5d5d68">Free · Windows 10 and 11 · No account</p>
     </div>
 
-    <div aria-label="The crew at work" style="max-width: 1000px; margin: 60px auto 0; padding-bottom: 84px; text-align: left">
-      <div style="border-radius: 32px; background: #ffffff; padding: 22px; box-shadow: 0 50px 100px -50px rgba(27, 87, 216, 0.5), 0 0 0 1px rgba(15, 23, 42, 0.05)">
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding: 4px 6px 18px">
-          <span style="display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px"><img src="assets/bearstudio.png" alt="" style="width: 30px; height: 30px; border-radius: 9px">Bella · 2-hour podcast</span>
-          <span style="display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 999px; background: #f1faf4; color: #12672f; font-size: 13px; font-weight: 600"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #22c55e"></span>Offline-ready · nothing uploaded</span>
+    <div aria-label="The crew at work" style="max-width: 1180px; margin: 56px auto 0; padding-bottom: 72px">
+      <div class="crew-map" style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px; align-items: start">
+        <div class="crew-node" style="display: flex; flex-direction: column; align-items: center; gap: 10px; min-width: 0">
+          <div class="crew-stage" style="height: 140px; display: flex; align-items: center; justify-content: center"><span style="width: 76px; height: 76px; border-radius: 22px; background: #ffffff; box-shadow: 0 12px 28px rgba(27, 87, 216, 0.16), inset 0 -2px 0 rgba(15, 23, 42, 0.05); display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1b57d8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z"></path><path d="M19 11a7 7 0 0 1-14 0M12 18v3"></path></svg></span></div>
+          <span style="font-weight: 600; font-size: 14.5px">Listen</span><span style="padding: 6px 12px; border-radius: 999px; background: #ffffff; border: 1px solid #dbe3fb; color: #1043b0; font-size: 12.5px; font-weight: 600; white-space: nowrap">Heard every word</span>
         </div>
-        <div class="crew-tiles" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
-        <div style="position: relative; min-height: 220px; box-sizing: border-box; padding: 26px; border-radius: 24px; background: #f5f5f7; overflow: hidden">
-          <span aria-hidden="true" style="position: absolute; top: 22px; right: 22px; width: 28px; height: 28px; box-sizing: border-box; border-radius: 50%; border: 2px solid #c9ccd3; background: #ffffff"></span>
-          <div style="font-weight: 600; font-size: 14px; color: #1b57d8">Short-video editor</div>
-          <div style="margin-top: 2px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 34px; letter-spacing: -0.03em">Bruno</div>
-          <div style="margin-top: 6px; max-width: 240px; font-weight: 600; font-size: 17px; line-height: 1.3">Talking video in. Reel out.</div>
-          <img src="assets/bruno.png" alt="Bruno" class="crew-bear" style="position: absolute; right: 22px; bottom: 22px; width: 118px; height: 118px; border-radius: 30px; box-shadow: 0 16px 32px -16px rgba(15, 23, 42, 0.5)">
+        <div class="crew-node" style="display: flex; flex-direction: column; align-items: center; gap: 10px; min-width: 0">
+          <div class="crew-stage" style="height: 140px; display: flex; align-items: center; justify-content: center"><span style="width: 76px; height: 76px; border-radius: 22px; background: #ffffff; box-shadow: 0 12px 28px rgba(27, 87, 216, 0.16), inset 0 -2px 0 rgba(15, 23, 42, 0.05); display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1b57d8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></span></div>
+          <span style="font-weight: 600; font-size: 14.5px">Scout</span><span style="padding: 6px 12px; border-radius: 999px; background: #ffffff; border: 1px solid #f4c7c3; color: #b42318; font-size: 12.5px; font-weight: 600; white-space: nowrap">Skipped the subscribe ask</span>
         </div>
-        <div style="position: relative; min-height: 220px; box-sizing: border-box; padding: 26px; border-radius: 24px; background: #ffffff; box-shadow: inset 0 0 0 2px #1b57d8, 0 20px 44px -24px rgba(27, 87, 216, 0.45); overflow: hidden">
-          <span aria-hidden="true" style="position: absolute; top: 22px; right: 22px; width: 28px; height: 28px; border-radius: 50%; background: #1b57d8; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>
-          <div style="font-weight: 600; font-size: 14px; color: #1b57d8">Podcast clipper</div>
-          <div style="margin-top: 2px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 34px; letter-spacing: -0.03em">Bella</div>
-          <div style="margin-top: 6px; max-width: 240px; font-weight: 600; font-size: 17px; line-height: 1.3">Full episode in. Shorts out.</div>
-          <img src="assets/bella.png" alt="Bella" class="crew-bear" style="position: absolute; right: 22px; bottom: 22px; width: 118px; height: 118px; border-radius: 30px; box-shadow: 0 16px 32px -16px rgba(15, 23, 42, 0.5)">
+        <div class="crew-node crew-bear-node" style="display: flex; flex-direction: column; align-items: center; gap: 10px; min-width: 0">
+          <div class="crew-stage" style="height: 140px; display: flex; align-items: center; justify-content: center"><img src="assets/bruno.png" alt="Bruno" style="width: 118px; height: 118px; border-radius: 32px; box-shadow: 0 18px 40px rgba(20, 64, 160, 0.3)"></div>
+          <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 20px">Bruno</span>
         </div>
+        <div class="crew-node crew-bear-node" style="display: flex; flex-direction: column; align-items: center; gap: 10px; min-width: 0">
+          <div class="crew-stage" style="height: 140px; display: flex; align-items: center; justify-content: center"><img src="assets/bearstudio.png" alt="BearStudio" style="width: 132px; height: 132px; border-radius: 36px; box-shadow: 0 18px 40px rgba(20, 64, 160, 0.3)"></div>
+          <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 20px">BearStudio</span><span style="padding: 7px 13px; border-radius: 999px; background: #0e0e12; color: #ffffff; font-size: 12.5px; font-weight: 600; white-space: nowrap">Runs on this PC</span>
         </div>
-        <div class="crew-strip" style="margin-top: 14px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; padding: 18px 20px; border-radius: 20px; background: #f7f8fa">
-          <div class="crew-step" style="display: flex; align-items: center; gap: 12px; min-width: 0">
-            <span style="flex: none; width: 42px; height: 42px; border-radius: 50%; background: #ffffff; box-shadow: inset 0 0 0 1px #e3e6ec; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1b57d8" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z"></path><path d="M19 11a7 7 0 0 1-14 0M12 18v3"></path></svg></span>
-            <span style="display: flex; flex-direction: column; min-width: 0"><span style="font-weight: 700; font-size: 14.5px">Listen</span><span style="font-size: 12.5px; color: #5d5d68; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Heard every word</span></span>
-          </div>
-          <div class="crew-step" style="display: flex; align-items: center; gap: 12px; min-width: 0">
-            <span style="flex: none; width: 42px; height: 42px; border-radius: 50%; background: #ffffff; box-shadow: inset 0 0 0 1px #e3e6ec; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1b57d8" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></span>
-            <span style="display: flex; flex-direction: column; min-width: 0"><span style="font-weight: 700; font-size: 14.5px">Scout</span><span style="font-size: 12.5px; color: #5d5d68; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Skipped the intro</span></span>
-          </div>
-          <div class="crew-step" style="display: flex; align-items: center; gap: 12px; min-width: 0">
-            <span style="flex: none; width: 42px; height: 42px; border-radius: 50%; background: #ffffff; box-shadow: inset 0 0 0 2px #1b57d8, 0 0 0 5px rgba(27, 87, 216, 0.12); display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1b57d8" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"></path><circle cx="12" cy="12" r="9"></circle></svg></span>
-            <span style="display: flex; flex-direction: column; min-width: 0"><span style="font-weight: 700; font-size: 14.5px">Critic</span><span style="font-size: 12.5px; color: #1043b0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Extending story 14</span></span>
-          </div>
-          <div class="crew-step" style="display: flex; align-items: center; gap: 12px; min-width: 0">
-            <span style="flex: none; width: 42px; height: 42px; border-radius: 50%; background: #ffffff; box-shadow: inset 0 0 0 1px #e3e6ec; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1b57d8" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"></path></svg></span>
-            <span style="display: flex; flex-direction: column; min-width: 0"><span style="font-weight: 700; font-size: 14.5px">Editor</span><span style="font-size: 12.5px; color: #5d5d68; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Trims every cut</span></span>
-          </div>
-          <div class="crew-step" style="display: flex; align-items: center; gap: 12px; min-width: 0">
-            <span style="flex: none; width: 42px; height: 42px; border-radius: 50%; background: #ffffff; box-shadow: inset 0 0 0 1px #e3e6ec; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1b57d8" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m10 9 5 3-5 3z"></path></svg></span>
-            <span style="display: flex; flex-direction: column; min-width: 0"><span style="font-weight: 700; font-size: 14.5px">Render</span><span style="font-size: 12.5px; color: #5d5d68; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Up next</span></span>
-          </div>
+        <div class="crew-node crew-bear-node" style="display: flex; flex-direction: column; align-items: center; gap: 10px; min-width: 0">
+          <div class="crew-stage" style="height: 140px; display: flex; align-items: center; justify-content: center"><img src="assets/bella.png" alt="Bella" style="width: 118px; height: 118px; border-radius: 32px; box-shadow: 0 18px 40px rgba(20, 64, 160, 0.3)"></div>
+          <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 20px">Bella</span>
+        </div>
+        <div class="crew-node" style="display: flex; flex-direction: column; align-items: center; gap: 10px; min-width: 0">
+          <div class="crew-stage" style="height: 140px; display: flex; align-items: center; justify-content: center"><span style="width: 76px; height: 76px; border-radius: 22px; background: #ffffff; box-shadow: 0 12px 28px rgba(27, 87, 216, 0.16), inset 0 -2px 0 rgba(15, 23, 42, 0.05); display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1b57d8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"></path><circle cx="12" cy="12" r="9"></circle></svg></span></div>
+          <span style="font-weight: 600; font-size: 14.5px">Critic</span><span style="padding: 6px 12px; border-radius: 999px; background: #ffffff; border: 1px solid #f6d7a8; color: #92400e; font-size: 12.5px; font-weight: 600; white-space: nowrap">Story 14 ends early: extend</span>
+        </div>
+        <div class="crew-node" style="display: flex; flex-direction: column; align-items: center; gap: 10px; min-width: 0">
+          <div class="crew-stage" style="height: 140px; display: flex; align-items: center; justify-content: center"><span style="width: 76px; height: 76px; border-radius: 22px; background: #ffffff; box-shadow: 0 12px 28px rgba(27, 87, 216, 0.16), inset 0 -2px 0 rgba(15, 23, 42, 0.05); display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1b57d8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m10 9 5 3-5 3z"></path></svg></span></div>
+          <span style="font-weight: 600; font-size: 14.5px">Render</span><span style="padding: 6px 12px; border-radius: 999px; background: #ffffff; border: 1px solid #b7e4c7; color: #15803d; font-size: 12.5px; font-weight: 600; white-space: nowrap">40 shorts ready</span>
         </div>
       </div>
     </div>
